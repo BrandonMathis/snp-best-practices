@@ -1,0 +1,2 @@
+module SnpBestPractices
+end
