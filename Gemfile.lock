@@ -3,7 +3,6 @@ PATH
   specs:
     snp_best_practices (0.0.1)
       capistrano (~> 3.1)
-      rails (~> 4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -98,4 +97,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  rails (~> 4.0)
   snp_best_practices!
