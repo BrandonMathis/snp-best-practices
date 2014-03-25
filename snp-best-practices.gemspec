@@ -1,9 +1,9 @@
 $:.push File.expand_path('../lib', __FILE__)
 
-require 'snp_best_practices/version'
+require 'snp-best-practices/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'snp_best_practices'
+  s.name        = 'snp-best-practices'
   s.version     = SnpBestPractices::VERSION
   s.platform    = Gem::Platform::RUBY
   s.summary     = 'Simple best practices, used by S&P backend engineers in ruby projects'

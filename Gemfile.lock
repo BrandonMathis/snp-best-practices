@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    snp_best_practices (0.0.1)
+    snp-best-practices (0.0.1)
       capistrano (~> 3.1)
 
 GEM
@@ -98,4 +98,4 @@ PLATFORMS
 
 DEPENDENCIES
   rails (~> 4.0)
-  snp_best_practices!
+  snp-best-practices!
