@@ -1,0 +1,35 @@
+namespace :load do
+  task :defaults do
+    set :ssh_key, -> { '~/.ssh/id_rsa' }
+    set :ssh_public_key, -> { "#{fetch(:ssh_key)}.pub" }
+    set :ssh_keygen_params, -> { '-q -b 4096 -t rsa -N "" -f' }
+  end
+end
+
+namespace :ssh do
+  desc 'Generate SSH RSA key'
+  task :keygen, :force do |t, args|
+    force = args[:force] || false
+    on roles(:app), in: :parallel do |host|
+      info "Generating SSH keys on #{host}"
+      execute :rm, '-f', fetch(:ssh_key), fetch(:ssh_public_key) if force
+      if test "[ -e #{fetch(:ssh_key)} -o -e #{fetch(:ssh_public_key)} ]"
+        info "SSH keys is already exist on #{host}. Try #{t}[force] to overwrite it."
+      else
+        execute 'ssh-keygen', fetch(:ssh_keygen_params), fetch(:ssh_key)
+      end
+    end
+  end
+
+  desc 'Read and show public SSH key'
+  task :cat_pub do
+    on roles(:app), in: :sequence do |host|
+      info "Public SSH key for #{host}"
+      info capture(:cat, fetch(:ssh_public_key))
+    end
+  end
+
+  after 'ssh:keygen', 'ssh:cat_pub'
+end
+
+task ssh: ['ssh:keygen']
