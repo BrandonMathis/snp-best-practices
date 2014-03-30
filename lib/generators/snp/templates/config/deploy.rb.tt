@@ -1,0 +1,3 @@
+# Set here your application name and git repository
+set :application, 'your-application-name'
+set :repo_url, 'git@git.snpdev.ru:saltpepper/your-application-name.git'

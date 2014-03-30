@@ -1,0 +1,8 @@
+# Testing host credentials
+server 'testing-host.domain',
+       roles: %w{web app db},
+       primary: true,
+       ssh_options: {
+           user: 'username',
+           auth_methods: %w(publickey password ask)
+       }
