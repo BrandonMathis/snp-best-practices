@@ -14,8 +14,15 @@ namespace :load do
     # linked dirs
     set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-    # environment
+    # custom environment
     set :default_env, -> { {worker_count: 2, deploy_to: fetch(:deploy_to)} }
+
+    # capistrano-bundler settings
+    set :bundle_binstubs, nil
+
+    # capistrano-rbenv settings
+    set :rbenv_type, :user
+    set :rbenv_ruby, '2.1.0'
   end
 end
 

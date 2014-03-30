@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir['test/**/*']
 
   s.add_dependency 'capistrano', '~> 3.1'
+  s.add_dependency 'capistrano-rails', '~> 1.1'
+  s.add_dependency 'capistrano-rbenv', '~> 2.0'
   s.add_dependency 'net-ssh', '2.7.0'
-
-  s.add_development_dependency 'rails', '~> 4.0'
 end
