@@ -9,13 +9,13 @@ namespace :load do
     set :keep_releases, 3
 
     # linked files
-    set :linked_files, %w{config/database.yml}
+    set :linked_files, %w(config/database.yml)
 
     # linked dirs
-    set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+    set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system)
 
     # custom environment
-    set :default_env, -> { {worker_count: 2, deploy_to: fetch(:deploy_to)}.merge(fetch(:env) || Hash.new) }
+    set :default_env, -> { { worker_count: 2, deploy_to: fetch(:deploy_to) }.merge(fetch(:env) || Hash.new) }
 
     # capistrano-bundler settings
     set :bundle_binstubs, nil

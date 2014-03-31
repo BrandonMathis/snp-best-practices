@@ -8,4 +8,3 @@ module Snp
     end
   end
 end
-

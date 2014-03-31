@@ -25,4 +25,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'capistrano-rails', '~> 1.1'
   s.add_dependency 'capistrano-rbenv', '~> 2.0'
   s.add_dependency 'net-ssh', '2.7.0'
+
+  s.add_development_dependency 'rubocop'
 end
