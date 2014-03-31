@@ -15,7 +15,7 @@ namespace :load do
     set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
     # custom environment
-    set :default_env, -> { {worker_count: 2, deploy_to: fetch(:deploy_to)} }
+    set :default_env, -> { {worker_count: 2, deploy_to: fetch(:deploy_to)}.merge(fetch(:env) || Hash.new) }
 
     # capistrano-bundler settings
     set :bundle_binstubs, nil

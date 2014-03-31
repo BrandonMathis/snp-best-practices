@@ -8,3 +8,4 @@ server 'production-host.domain',
        }
 
 set :keep_releases, 10
+set :env, { worker_count: 8 }
