@@ -8,6 +8,9 @@ namespace :load do
     set :scm, :git
     set :keep_releases, 3
 
+    # asking password if needed
+    set :password, ask('password', nil)
+
     # linked files
     set :linked_files, %w(config/database.yml)
 
