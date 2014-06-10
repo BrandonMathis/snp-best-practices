@@ -26,6 +26,10 @@ namespace :load do
     # capistrano-rbenv settings
     set :rbenv_type, :user
     set :rbenv_ruby, '2.1.0'
+
+    # capistrano3-unicorn settings
+    set :unicorn_pid, -> { "#{fetch(:deploy_to)}/shared/tmp/pids/unicorn.pid" }
+    set :unicorn_config_path, -> { File.join(current_path, 'config', 'unicorn.rb') }
   end
 end
 
