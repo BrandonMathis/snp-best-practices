@@ -5,6 +5,6 @@ namespace :deploy do
 end
 
 Capistrano::DSL.stages.each do |stage|
-  after stage, 'deploy:set_rails_env'
+  after stage, 'deploy:set_rails_env' # TODO: remove this line after capistrano-rails update
   after 'deploy:publishing', 'deploy:restart'
 end
