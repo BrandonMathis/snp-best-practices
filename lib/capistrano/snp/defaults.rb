@@ -1,7 +1,7 @@
 namespace :load do
   task :defaults do
-    # config valid only for Capistrano 3.1
-    lock '3.1.0'
+    # config valid only for Capistrano 3.2.1
+    lock '3.2.1'
 
     # basic settings
     set :deploy_to, -> { "/var/www/#{fetch(:application)}/ss" }
