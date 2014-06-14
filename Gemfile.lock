@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    snp-best-practices (0.0.1)
+    snp-best-practices (0.0.2)
       capistrano (= 3.2.1)
       capistrano-rails (~> 1.1)
       capistrano-rbenv (~> 2.0)
