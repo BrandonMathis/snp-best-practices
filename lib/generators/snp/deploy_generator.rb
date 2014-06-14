@@ -1,6 +1,9 @@
 module Snp
   class DeployGenerator < Rails::Generators::Base
-    desc 'Prepares application to deploy and add custom stages. `testing` and `production` stages are created by default.'
+    desc <<-EOF
+Prepares application to deploy and add custom stages. `testing` and `production` stages are created by default.
+    EOF
+
     argument :stages, type: :array, default: [], banner: 'custom stages'
     source_root File.expand_path('../templates', __FILE__)
 
