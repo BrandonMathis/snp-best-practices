@@ -2,11 +2,9 @@
 server 'production-host.domain',
        roles: %w{web app db},
        primary: true,
-       ssh_options: {
-           user: 'username',
-           auth_methods: %w(publickey password),
-           password: fetch(:password)
-       }
+       user: 'username',
+       # Do not store password for production host in VCS!
+       password: fetch(:password)
 
 set :keep_releases, 10
 set :env, { worker_count: 8 }
