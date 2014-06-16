@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
 
   s.require_path = 'lib'
-  s.files = Dir['{lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
+  s.files = Dir['{lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
   s.test_files = Dir['test/**/*']
 
   s.add_dependency 'capistrano', '3.2.1'
