@@ -1,13 +1,9 @@
 AllCops:
-  Excludes:
-    - Rakefile
+  Includes:
+    - '**/*.tt'
 LineLength:
   Max: 120
-MethodLength:
-  Max: 15
 Documentation:
-  Enabled: false
-AsciiComments:
   Enabled: false
 FileName:
   Enabled: false

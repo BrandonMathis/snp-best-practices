@@ -1,6 +1,6 @@
 # Testing host credentials
 server 'testing-host.domain',
-       roles: %w{web app db},
+       roles: %w(web app db),
        primary: true,
        user: 'username',
-       password: fetch(:password)
+       password: 'password'

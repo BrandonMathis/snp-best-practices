@@ -1,10 +1,10 @@
 # Production host credentials
 server 'production-host.domain',
-       roles: %w{web app db},
+       roles: %w(web app db),
        primary: true,
        user: 'username',
        # Do not store password for production host in VCS!
        password: fetch(:password)
 
 set :keep_releases, 10
-set :env, { worker_count: 8 }
+set :env, worker_count: 8

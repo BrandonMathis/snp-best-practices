@@ -1,6 +1,6 @@
 $:.push File.expand_path('../lib', __FILE__)
 
-require 'snp-best-practices/version'
+require 'snp_best_practices/version'
 
 Gem::Specification.new do |s|
   s.name        = 'snp-best-practices'
