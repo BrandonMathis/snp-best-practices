@@ -8,6 +8,9 @@ namespace :load do
     set :scm, :git
     set :keep_releases, 3
 
+    # logging
+    set :log_level, :info
+
     # asking password if needed
     set :password, -> { ask('password', nil) }
 
@@ -25,12 +28,10 @@ namespace :load do
 
     # capistrano-rbenv settings
     set :rbenv_type, :user
-    set :rbenv_ruby, '2.1.2'
+    set :rbenv_ruby, '2.1.4'
 
     # capistrano3-unicorn settings
     set :unicorn_pid, -> { "#{fetch(:deploy_to)}/shared/tmp/pids/unicorn.pid" }
     set :unicorn_config_path, -> { File.join(current_path, 'config', 'unicorn.rb') }
   end
 end
-
-Rake.application.options.trace = true
