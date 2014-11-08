@@ -9,7 +9,7 @@ GC.respond_to?(:copy_on_write_friendly=) &&
 
 listen "#{deploy_to}/shared/tmp/sockets/unicorn.sock", backlog: 1024
 
-working_directory "#{deploy_to}/current/"
+working_directory "#{deploy_to}/current"
 pid               "#{deploy_to}/shared/tmp/pids/unicorn.pid"
 stderr_path       "#{deploy_to}/shared/log/unicorn.stderr.log"
 stdout_path       "#{deploy_to}/shared/log/unicorn.stdout.log"
