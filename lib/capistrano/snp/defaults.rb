@@ -15,7 +15,7 @@ namespace :load do
     set :password, -> { ask('password', nil) }
 
     # linked files
-    set :linked_files, fetch(:linked_dirs, []) + %w(config/database.yml)
+    set :linked_files, fetch(:linked_files, []) + %w(config/database.yml)
 
     # linked dirs
     set :linked_dirs, fetch(:linked_dirs, []) + %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system)
