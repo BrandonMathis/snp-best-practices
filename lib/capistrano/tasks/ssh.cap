@@ -29,6 +29,22 @@ namespace :ssh do
     end
   end
 
+  desc 'Open a ssh `cap [staging] ssh [server_index default: 0]`'
+  task :connect do
+    on roles(:app) do |server|
+      server_index = ARGV[2].to_i
+
+      return if server != roles(:app)[server_index]
+
+      info "Opening a console on: #{host}...."
+      user = server.user
+      params = "#{user}@#{host}"
+      params += %{ -t "cd #{current_path} && bash -l"}
+      info server.password
+      exec "ssh #{params}"
+    end
+  end
+
   after 'ssh:keygen', 'ssh:cat_pub'
 end
 
