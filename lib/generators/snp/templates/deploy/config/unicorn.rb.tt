@@ -5,7 +5,7 @@ preload_app true
 timeout 30
 
 GC.respond_to?(:copy_on_write_friendly=) &&
-    GC.copy_on_write_friendly = true
+  GC.copy_on_write_friendly = true
 
 listen "#{deploy_to}/shared/tmp/sockets/unicorn.sock", backlog: 1024
 
@@ -14,7 +14,11 @@ pid               "#{deploy_to}/shared/tmp/pids/unicorn.pid"
 stderr_path       "#{deploy_to}/shared/log/unicorn.stderr.log"
 stdout_path       "#{deploy_to}/shared/log/unicorn.stdout.log"
 
-before_fork do |server, worker|
+before_exec do |_server|
+  ENV['BUNDLE_GEMFILE'] = "#{deploy_to}/current/Gemfile"
+end
+
+before_fork do |_server, _worker|
   defined?(ActiveRecord::Base) && ActiveRecord::Base.connection.disconnect!
 
   old_pid = "#{server.config[:pid]}.oldbin"
@@ -27,6 +31,6 @@ before_fork do |server, worker|
   end
 end
 
-after_fork do |server, worker|
+after_fork do |_server, _worker|
   defined?(ActiveRecord::Base) && ActiveRecord::Base.establish_connection
 end
