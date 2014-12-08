@@ -1,7 +1,7 @@
 namespace :load do
   task :defaults do
     # config valid only for Capistrano 3.2.1
-    lock '3.2.1'
+    lock '3.3.3'
 
     # basic settings
     set :deploy_to, -> { "/var/www/#{fetch(:application)}/ss" }
@@ -28,7 +28,7 @@ namespace :load do
 
     # capistrano-rbenv settings
     set :rbenv_type, :user
-    set :rbenv_ruby, '2.1.4'
+    set :rbenv_ruby, '2.1.5'
 
     # capistrano3-unicorn settings
     set :unicorn_pid, -> { "#{fetch(:deploy_to)}/shared/tmp/pids/unicorn.pid" }
