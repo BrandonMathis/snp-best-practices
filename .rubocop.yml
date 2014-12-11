@@ -1,6 +1,7 @@
 AllCops:
   Includes:
     - '**/*.tt'
+    - '**/*.cap'
 LineLength:
   Max: 120
 Documentation:
