@@ -1,0 +1,17 @@
+namespace :logs do
+  desc "tail logs on remote server"
+  task :tail, :file do |t, args|
+    if args[:file]
+      on roles(:app) do
+        execute "tail -f #{shared_path}/log/#{args[:file]}.log"
+      end
+    else
+      on roles(:app) do
+        info "please specify a logfile e.g: 'cap stage logs:tail[logfile]'"
+        info "will tail 'shared_path/log/logfile.log'"
+        info "remember if you use zsh you'll need to format it as:"
+        info "cap stage 'logs:tail[]' (single qoutes)"
+      end
+    end
+  end
+end
