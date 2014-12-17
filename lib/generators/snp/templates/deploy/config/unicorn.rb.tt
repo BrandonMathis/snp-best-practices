@@ -18,7 +18,7 @@ before_exec do |_server|
   ENV['BUNDLE_GEMFILE'] = "#{deploy_to}/current/Gemfile"
 end
 
-before_fork do |_server, _worker|
+before_fork do |server, _worker|
   defined?(ActiveRecord::Base) && ActiveRecord::Base.connection.disconnect!
 
   old_pid = "#{server.config[:pid]}.oldbin"
