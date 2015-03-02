@@ -10,9 +10,9 @@ GC.respond_to?(:copy_on_write_friendly=) &&
 listen "#{deploy_to}/shared/tmp/sockets/unicorn.sock", backlog: 1024
 
 working_directory "#{deploy_to}/current"
-pid               "#{deploy_to}/shared/tmp/pids/unicorn.pid"
-stderr_path       "#{deploy_to}/shared/log/unicorn.stderr.log"
-stdout_path       "#{deploy_to}/shared/log/unicorn.stdout.log"
+pid "#{deploy_to}/shared/tmp/pids/unicorn.pid"
+stderr_path "#{deploy_to}/shared/log/unicorn.stderr.log"
+stdout_path "#{deploy_to}/shared/log/unicorn.stdout.log"
 
 before_exec do |_server|
   ENV['BUNDLE_GEMFILE'] = "#{deploy_to}/current/Gemfile"
@@ -26,7 +26,7 @@ before_fork do |server, _worker|
     begin
       Process.kill('QUIT', File.read(old_pid).to_i)
     rescue Errno::ENOENT, Errno::ESRCH
-      # someone else did our job for us
+      puts "Unicorn master already killed. Someone else did our job for us."
     end
   end
 end
