@@ -1,9 +1,0 @@
-namespace :deploy do
-  task :restart do
-    invoke 'unicorn:restart'
-  end
-end
-
-Capistrano::DSL.stages.each do |stage|
-  after 'deploy:publishing', 'deploy:restart'
-end

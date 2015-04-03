@@ -30,8 +30,9 @@ namespace :load do
     set :rbenv_type, :user
     set :rbenv_ruby, '2.1.5'
 
-    # capistrano3-unicorn settings
-    set :unicorn_pid, -> { "#{fetch(:deploy_to)}/shared/tmp/pids/unicorn.pid" }
-    set :unicorn_config_path, -> { File.join(current_path, 'config', 'unicorn.rb') }
+    # capistrano3-puma settings
+    set :puma_bind, %W(tcp://localhost:9293 unix://#{shared_path}/tmp/sockets/application.sock)
+    set :puma_worker_timeout, 30
+    set :puma_init_active_record, true
   end
 end
