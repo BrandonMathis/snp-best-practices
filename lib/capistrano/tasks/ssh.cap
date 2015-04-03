@@ -39,7 +39,7 @@ namespace :ssh do
       info "Opening a console on: #{host}...."
       user = server.user
       params = "#{user}@#{host}"
-      params += %{ -t "cd #{current_path} && bash -l"}
+      params += %(-t "cd #{current_path} && bash -l")
       info server.password
       exec "ssh #{params}"
     end
