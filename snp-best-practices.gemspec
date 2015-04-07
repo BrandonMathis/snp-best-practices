@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version     = '>= 2.0'
   s.required_rubygems_version = '>= 1.3.6'
 
-  s.authors     = ['Sergey Ponomarev', 'Sergey Belov']
+  s.authors     = ['Sergey Ponomarev', 'Sergey Belov', 'Vladimir Lyzo', 'Igor Kutyavin']
   s.email       = ['sergey.ponomarev@saltpepper.ru']
   s.homepage    = 'http://saltpepper.ru'
   s.license     = 'MIT'
@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'capistrano', '3.4.0'
   s.add_dependency 'capistrano-rails', '~> 1.1'
   s.add_dependency 'capistrano-rbenv', '~> 2.0'
-  s.add_dependency 'capistrano3-unicorn'
+  s.add_dependency 'capistrano3-puma'
   s.add_dependency 'net-ssh', '~> 2.9'
 
   s.add_development_dependency 'rubocop'
