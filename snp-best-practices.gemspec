@@ -26,6 +26,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'capistrano-rbenv', '~> 2.0'
   s.add_dependency 'capistrano3-puma'
   s.add_dependency 'net-ssh', '~> 2.9'
-
+  s.add_dependency 'newrelic_rpm'
   s.add_development_dependency 'rubocop'
 end
