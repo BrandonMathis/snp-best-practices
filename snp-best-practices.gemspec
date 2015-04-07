@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.files = Dir['{lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
   s.test_files = Dir['test/**/*']
 
-  s.add_dependency 'capistrano', '3.3.3'
+  s.add_dependency 'capistrano', '3.4.0'
   s.add_dependency 'capistrano-rails', '~> 1.1'
   s.add_dependency 'capistrano-rbenv', '~> 2.0'
   s.add_dependency 'capistrano3-unicorn'
