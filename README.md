@@ -53,7 +53,6 @@ This creates the following files, you can edit them for your choice.
     │   └── testing.rb
     ├── environments
     │   └── testing.rb
-    ├── newrelic.yml
     └── deploy.rb
 ```
 
