@@ -12,6 +12,7 @@
   - predefined default [settings](lib/capistrano/snp/defaults.rb)
 * Project settings
   - .editorconfig
+  - newrelic.yml configuration file
 
 ## Requirements
 
@@ -52,6 +53,7 @@ This creates the following files, you can edit them for your choice.
     │   └── testing.rb
     ├── environments
     │   └── testing.rb
+    ├── newrelic.yml
     └── deploy.rb
 ```
 
