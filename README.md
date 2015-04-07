@@ -7,7 +7,7 @@
   - Capistrano integration
   - configuration and stages generator
   - custom tasks
-  - unicorn integration
+  - puma integration
   - rbenv support
   - predefined default [settings](lib/capistrano/snp/defaults.rb)
 * Project settings
@@ -52,8 +52,7 @@ This creates the following files, you can edit them for your choice.
     │   └── testing.rb
     ├── environments
     │   └── testing.rb
-    ├── deploy.rb
-    └── unicorn.rb
+    └── deploy.rb
 ```
 
 ## Advanced usage
