@@ -31,7 +31,7 @@ namespace :load do
     set :rbenv_ruby, '2.1.5'
 
     # capistrano3-puma settings
-    set :puma_bind, %W(unix://#{shared_path}/tmp/sockets/application.sock)
+    set :puma_bind, -> { %W(unix://#{shared_path}/tmp/sockets/application.sock) }
     set :puma_worker_timeout, 30
     set :puma_init_active_record, true
   end
