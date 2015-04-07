@@ -12,6 +12,7 @@
   - predefined default [settings](lib/capistrano/snp/defaults.rb)
 * Project settings
   - .editorconfig
+  - newrelic.yml configuration file
 
 ## Requirements
 
