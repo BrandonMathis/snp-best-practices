@@ -4,3 +4,6 @@ server 'testing-host.domain',
        primary: true,
        user: 'username',
        password: 'password'
+
+set :puma_threads, [4, 4]
+set :puma_workers, 2
