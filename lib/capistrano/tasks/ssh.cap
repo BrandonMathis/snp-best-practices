@@ -38,7 +38,9 @@ namespace :ssh do
 
       info "Opening a console on: #{host}...."
       user = server.user
+      port = server.port
       params = "#{user}@#{host}"
+      params = " -p #{port}" if port
       params += %( -t "cd #{current_path} && bash -l")
       info server.password
       exec "ssh #{params}"
