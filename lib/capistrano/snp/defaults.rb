@@ -28,7 +28,7 @@ namespace :load do
 
     # capistrano-rbenv settings
     set :rbenv_type, :user
-    set :rbenv_ruby, '2.1.5'
+    set :rbenv_ruby, '2.2.2'
 
     # capistrano3-puma settings
     set :puma_bind, -> { %W(unix://#{shared_path}/tmp/sockets/application.sock) }
