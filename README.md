@@ -12,6 +12,7 @@
   - predefined default [settings](lib/capistrano/snp/defaults.rb)
 * Project settings
   - .editorconfig
+  - rubocop.yml
   - newrelic.yml configuration file
 
 ## Requirements
@@ -69,4 +70,4 @@ add any another:
 
 This project rocks and uses MIT License (MIT).
 
-Copyright (c) 2014 Salt & Pepper
+Copyright (c) 2015 Salt & Pepper
