@@ -33,6 +33,6 @@ namespace :load do
     # capistrano3-puma settings
     set :puma_bind, -> { %W(unix://#{shared_path}/tmp/sockets/application.sock) }
     set :puma_worker_timeout, 30
-    set :puma_init_active_record, true
+    set :puma_init_active_record, false
   end
 end
