@@ -7,7 +7,7 @@
   - Capistrano integration
   - configuration and stages generator
   - custom tasks
-  - puma integration
+  - puma integration (with AR reloading)
   - rbenv support
   - predefined default [settings](lib/capistrano/snp/defaults.rb)
 * Project settings
