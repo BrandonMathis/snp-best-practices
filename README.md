@@ -28,7 +28,7 @@ Other versions are untested but might work fine.
 
 Add this line to your application's Gemfile into `development` group:
 
-    gem 'snp-best-practices', git: 'git@git.snpdev.ru:saltpepper/snp-best-practices.git'
+    gem 'snp-best-practices', git: 'git@github.com:groony/snp-best-practices.git'
 
 And then execute:
 
